@@ -1,4 +1,4 @@
-package js
+package javascript
 
 import (
     "path/filepath"

@@ -8,7 +8,7 @@ import (
     "./haskell"
     "./golang"
     "./java"
-    "./js"
+    "./javascript"
     "./perl"
     "./php"
     "./python"
@@ -25,7 +25,7 @@ var languages = map[string]runFn{
     "haskell": haskell.Run,
     "go": golang.Run,
     "java": java.Run,
-    "js": js.Run,
+    "javascript": javascript.Run,
     "perl": perl.Run,
     "php": php.Run,
     "python": python.Run,
