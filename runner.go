@@ -55,9 +55,15 @@ func main() {
 
 // Writes files to disk, returns list of absolute filepaths
 func writeFiles(files []*InMemoryFile) ([]string, error) {
+    // Create temp dir
+    tmpPath, err := ioutil.TempDir("", "")
+    if err != nil {
+        return nil, err
+    }
+
     paths := make([]string, len(files), len(files))
     for i, file := range files {
-        path, err := writeFile(file)
+        path, err := writeFile(tmpPath, file)
         if err != nil {
             return nil, err
         }
@@ -69,18 +75,12 @@ func writeFiles(files []*InMemoryFile) ([]string, error) {
 }
 
 // Writes a single file to disk
-func writeFile(file *InMemoryFile) (string, error) {
-    // Create temp dir
-    tmpPath, err := ioutil.TempDir("", "")
-    if err != nil {
-        return "", err
-    }
-
-    // Get absolute path to file inside temp dir
-    absPath := filepath.Join(tmpPath, file.Name)
+func writeFile(basePath string, file *InMemoryFile) (string, error) {
+    // Get absolute path to file inside basePath
+    absPath := filepath.Join(basePath, file.Name)
 
     // Create all parent dirs
-    err = os.MkdirAll(filepath.Dir(absPath), 0775)
+    err := os.MkdirAll(filepath.Dir(absPath), 0775)
     if err != nil {
         return "", err
     }
