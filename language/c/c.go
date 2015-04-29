@@ -2,6 +2,7 @@ package c
 
 import (
     "path/filepath"
+    "../../util"
     "../../cmd"
 )
 
@@ -9,7 +10,7 @@ func Run(files []string) (string, string, error) {
     workDir := filepath.Dir(files[0])
     binName := "a.out"
 
-    sourceFiles := filterSourceFiles(files)
+    sourceFiles := util.FilterByExtension(files, "c")
     args := append([]string{"clang", "-o", binName}, sourceFiles...)
     stdout, stderr, err := cmd.Run(workDir, args...)
     if err != nil {
@@ -18,16 +19,4 @@ func Run(files []string) (string, string, error) {
 
     binPath := filepath.Join(workDir, binName)
     return cmd.Run(workDir, binPath)
-}
-
-func filterSourceFiles(files []string) []string {
-    var newFiles []string
-
-    for _, file := range files {
-        if filepath.Ext(file) == ".c" {
-            newFiles = append(newFiles, file)
-        }
-    }
-
-    return newFiles
 }
