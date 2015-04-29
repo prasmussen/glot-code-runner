@@ -3,6 +3,7 @@ package language
 import (
     "./bash"
     "./c"
+    "./csharp"
     "./cpp"
     "./erlang"
     "./haskell"
@@ -20,6 +21,7 @@ type runFn func([]string) (string, string, error)
 var languages = map[string]runFn{
     "bash": bash.Run,
     "c": c.Run,
+    "csharp": csharp.Run,
     "cpp": cpp.Run,
     "erlang": erlang.Run,
     "haskell": haskell.Run,
