@@ -6,6 +6,7 @@ import (
     "./csharp"
     "./cpp"
     "./erlang"
+    "./fsharp"
     "./haskell"
     "./golang"
     "./java"
@@ -24,6 +25,7 @@ var languages = map[string]runFn{
     "csharp": csharp.Run,
     "cpp": cpp.Run,
     "erlang": erlang.Run,
+    "fsharp": fsharp.Run,
     "haskell": haskell.Run,
     "go": golang.Run,
     "java": java.Run,
