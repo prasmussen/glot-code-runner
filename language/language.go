@@ -5,6 +5,7 @@ import (
     "./c"
     "./clojure"
     "./csharp"
+    "./elixir"
     "./cpp"
     "./erlang"
     "./fsharp"
@@ -26,6 +27,7 @@ var languages = map[string]runFn{
     "c": c.Run,
     "clojure": clojure.Run,
     "csharp": csharp.Run,
+    "elixir": elixir.Run,
     "cpp": cpp.Run,
     "erlang": erlang.Run,
     "fsharp": fsharp.Run,
