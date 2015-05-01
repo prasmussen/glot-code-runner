@@ -16,6 +16,7 @@ import (
     "./php"
     "./python"
     "./ruby"
+    "./scala"
 )
 
 type runFn func([]string) (string, string, error)
@@ -36,6 +37,7 @@ var languages = map[string]runFn{
     "php": php.Run,
     "python": python.Run,
     "ruby": ruby.Run,
+    "scala": scala.Run,
 }
 
 func IsSupported(lang string) bool {
