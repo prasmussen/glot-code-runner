@@ -18,6 +18,7 @@ import (
     "./php"
     "./python"
     "./ruby"
+    "./rust"
     "./scala"
 )
 
@@ -41,6 +42,7 @@ var languages = map[string]runFn{
     "php": php.Run,
     "python": python.Run,
     "ruby": ruby.Run,
+    "rust": rust.Run,
     "scala": scala.Run,
 }
 
