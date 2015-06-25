@@ -15,6 +15,7 @@ import (
     "./java"
     "./javascript"
     "./lua"
+    "./ocaml"
     "./perl"
     "./php"
     "./python"
@@ -40,6 +41,7 @@ var languages = map[string]runFn{
     "java": java.Run,
     "javascript": javascript.Run,
     "lua": lua.Run,
+    "ocaml": ocaml.Run,
     "perl": perl.Run,
     "php": php.Run,
     "python": python.Run,
