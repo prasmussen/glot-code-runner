@@ -12,7 +12,7 @@ glot-code-runner requires that the compiler / interpreter for the languages
 you want to run is installed and is in PATH.
 
 ### Downloads
-- [code-runner-linux-x64 v1.0.0](TODO)
+- [glot-code-runner-linux-x64.tar.gz v1.0.0](https://drive.google.com/uc?id=0B3X9GlR6EmbnOWNITnpZSk9SdVE)
 
 ## Supported languages
 - assembly
