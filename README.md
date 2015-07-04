@@ -29,6 +29,7 @@ you want to run is installed and is in PATH.
 - java
 - javascript
 - lua
+- nim
 - ocaml
 - perl
 - php
