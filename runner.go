@@ -7,11 +7,13 @@ import (
     "path/filepath"
     "io/ioutil"
     "./language"
+    "./cmd"
 )
 
 type Payload struct {
     Language string `json:"language"`
     Files []*InMemoryFile `json:"files"`
+    Command string `json:"command"`
 }
 
 type InMemoryFile struct {
@@ -49,7 +51,16 @@ func main() {
         exitF("Failed to write file to disk (%s)", err.Error())
     }
 
-    stdout, stderr, err := language.Run(payload.Language, filepaths)
+    var stdout, stderr string
+
+    // Execute the given command or run the code with
+    // the language runner if no command is given
+    if payload.Command == "" {
+        stdout, stderr, err = language.Run(payload.Language, filepaths)
+    } else {
+        workDir := filepath.Dir(filepaths[0])
+        stdout, stderr, err = cmd.RunBash(workDir, payload.Command)
+    }
     printResult(stdout, stderr, err)
 }
 

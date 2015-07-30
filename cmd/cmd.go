@@ -17,3 +17,8 @@ func Run(workDir string, args ...string) (string, string, error) {
 
     return stdout.String(), stderr.String(), err
 }
+
+func RunBash(workDir, command string) (string, string, error) {
+    args := []string{"bash", "-c", command}
+    return Run(workDir, args...)
+}
