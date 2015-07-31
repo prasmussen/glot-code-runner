@@ -19,6 +19,5 @@ func Run(workDir string, args ...string) (string, string, error) {
 }
 
 func RunBash(workDir, command string) (string, string, error) {
-    args := []string{"bash", "-c", command}
-    return Run(workDir, args...)
+    return Run(workDir, "bash", "-c", command)
 }
