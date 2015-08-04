@@ -13,6 +13,7 @@ import (
     "./erlang"
     "./fsharp"
     "./haskell"
+    "./idris"
     "./golang"
     "./java"
     "./javascript"
@@ -42,6 +43,7 @@ var languages = map[string]runFn{
     "erlang": erlang.Run,
     "fsharp": fsharp.Run,
     "haskell": haskell.Run,
+    "idris": idris.Run,
     "go": golang.Run,
     "java": java.Run,
     "javascript": javascript.Run,
