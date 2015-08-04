@@ -5,6 +5,7 @@ import (
     "./bash"
     "./c"
     "./clojure"
+    "./coffeescript"
     "./csharp"
     "./elixir"
     "./cpp"
@@ -32,6 +33,7 @@ var languages = map[string]runFn{
     "bash": bash.Run,
     "c": c.Run,
     "clojure": clojure.Run,
+    "coffeescript": coffeescript.Run,
     "csharp": csharp.Run,
     "elixir": elixir.Run,
     "cpp": cpp.Run,
