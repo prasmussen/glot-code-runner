@@ -17,6 +17,7 @@ import (
     "./golang"
     "./java"
     "./javascript"
+    "./julia"
     "./lua"
     "./nim"
     "./ocaml"
@@ -47,6 +48,7 @@ var languages = map[string]runFn{
     "go": golang.Run,
     "java": java.Run,
     "javascript": javascript.Run,
+    "julia": julia.Run,
     "lua": lua.Run,
     "nim": nim.Run,
     "ocaml": ocaml.Run,
