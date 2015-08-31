@@ -11,7 +11,7 @@ func Run(files []string) (string, string, error) {
     binName := "a.out"
 
     sourceFiles := util.FilterByExtension(files, "cpp")
-    args := append([]string{"clang++", "-o", binName}, sourceFiles...)
+    args := append([]string{"clang++", "-std=c++11", "-o", binName}, sourceFiles...)
     stdout, stderr, err := cmd.Run(workDir, args...)
     if err != nil {
         return stdout, stderr, err
