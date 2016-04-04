@@ -22,6 +22,7 @@ import (
     "./nim"
     "./ocaml"
     "./perl"
+    "./perl6"
     "./php"
     "./python"
     "./ruby"
@@ -54,6 +55,7 @@ var languages = map[string]runFn{
     "nim": nim.Run,
     "ocaml": ocaml.Run,
     "perl": perl.Run,
+    "perl6": perl6.Run,
     "php": php.Run,
     "python": python.Run,
     "ruby": ruby.Run,
