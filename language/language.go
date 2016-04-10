@@ -9,6 +9,7 @@ import (
     "./csharp"
     "./d"
     "./elixir"
+    "./elm"
     "./cpp"
     "./erlang"
     "./fsharp"
@@ -42,6 +43,7 @@ var languages = map[string]runFn{
     "csharp": csharp.Run,
     "d": d.Run,
     "elixir": elixir.Run,
+    "elm": elm.Run,
     "cpp": cpp.Run,
     "erlang": erlang.Run,
     "fsharp": fsharp.Run,
