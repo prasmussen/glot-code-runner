@@ -2,6 +2,7 @@ package language
 
 import (
     "./assembly"
+    "./ats"
     "./bash"
     "./c"
     "./clojure"
@@ -36,6 +37,7 @@ type runFn func([]string) (string, string, error)
 
 var languages = map[string]runFn{
     "assembly": assembly.Run,
+    "ats": ats.Run,
     "bash": bash.Run,
     "c": c.Run,
     "clojure": clojure.Run,
