@@ -17,6 +17,7 @@ import (
     "./haskell"
     "./idris"
     "./golang"
+    "./groovy"
     "./java"
     "./javascript"
     "./julia"
@@ -52,6 +53,7 @@ var languages = map[string]runFn{
     "haskell": haskell.Run,
     "idris": idris.Run,
     "go": golang.Run,
+    "groovy": groovy.Run,
     "java": java.Run,
     "javascript": javascript.Run,
     "julia": julia.Run,
