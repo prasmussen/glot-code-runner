@@ -14,5 +14,5 @@ func Run(files []string, stdin string) (string, string, error) {
         return stdout, stderr, err
     }
 
-    return cmd.Run(workDir, "scala", "Main")
+    return cmd.RunStdin(workDir, stdin, "scala", "Main")
 }

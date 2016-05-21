@@ -7,5 +7,5 @@ import (
 
 func Run(files []string, stdin string) (string, string, error) {
     workDir := filepath.Dir(files[0])
-    return cmd.Run(workDir, "bash", files[0])
+    return cmd.RunStdin(workDir, stdin, "bash", files[0])
 }

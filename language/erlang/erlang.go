@@ -17,5 +17,5 @@ func Run(files []string, stdin string) (string, string, error) {
     }
 
     // Run first file with escript
-    return cmd.Run(workDir, "escript", files[0])
+    return cmd.RunStdin(workDir, stdin, "escript", files[0])
 }

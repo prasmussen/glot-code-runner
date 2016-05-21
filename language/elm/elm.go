@@ -27,5 +27,5 @@ func Run(files []string, stdin string) (string, string, error) {
     }
 
     // Run javascript with node
-    return cmd.Run(workDir, "node", "main.js")
+    return cmd.RunStdin(workDir, stdin, "node", "main.js")
 }

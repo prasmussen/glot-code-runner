@@ -15,5 +15,5 @@ func Run(files []string, stdin string) (string, string, error) {
     }
 
     binPath := filepath.Join(workDir, binName)
-    return cmd.Run(workDir, binPath)
+    return cmd.RunStdin(workDir, stdin, binPath)
 }

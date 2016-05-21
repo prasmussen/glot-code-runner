@@ -14,7 +14,7 @@ func Run(files []string, stdin string) (string, string, error) {
         return stdout, stderr, err
     }
 
-    return cmd.Run(workDir, "java", className(fname))
+    return cmd.RunStdin(workDir, stdin, "java", className(fname))
 }
 
 func className(fname string) string {
