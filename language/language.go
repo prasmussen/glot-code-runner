@@ -34,7 +34,7 @@ import (
     "./swift"
 )
 
-type runFn func([]string) (string, string, error)
+type runFn func([]string, string) (string, string, error)
 
 var languages = map[string]runFn{
     "assembly": assembly.Run,
@@ -75,6 +75,6 @@ func IsSupported(lang string) bool {
     return supported
 }
 
-func Run(lang string, files []string) (string, string, error) {
-    return languages[lang](files)
+func Run(lang string, files []string, stdin string) (string, string, error) {
+    return languages[lang](files, stdin)
 }

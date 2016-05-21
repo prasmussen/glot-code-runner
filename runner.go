@@ -13,6 +13,7 @@ import (
 type Payload struct {
     Language string `json:"language"`
     Files []*InMemoryFile `json:"files"`
+    Stdin string `json:"stdin"`
     Command string `json:"command"`
 }
 
@@ -56,10 +57,10 @@ func main() {
     // Execute the given command or run the code with
     // the language runner if no command is given
     if payload.Command == "" {
-        stdout, stderr, err = language.Run(payload.Language, filepaths)
+        stdout, stderr, err = language.Run(payload.Language, filepaths, payload.Stdin)
     } else {
         workDir := filepath.Dir(filepaths[0])
-        stdout, stderr, err = cmd.RunBash(workDir, payload.Command)
+        stdout, stderr, err = cmd.RunBashStdin(workDir, payload.Command, payload.Stdin)
     }
     printResult(stdout, stderr, err)
 }
