@@ -11,24 +11,24 @@ the result as json to stdout.
 glot-code-runner requires that the compiler / interpreter for the languages
 you want to run is installed and is in PATH.
 
-### Downloads
-- [glot-code-runner-linux-x64.tar.gz v1.0.0](https://drive.google.com/uc?id=0B3X9GlR6EmbnOWNITnpZSk9SdVE)
-
 ## Supported languages
 - assembly
+- ats
 - bash
 - c
 - clojure
 - coffeescript
+- cpp
 - csharp
 - d
 - elixir
-- cpp
+- elm
 - erlang
 - fsharp
+- golang
+- groovy
 - haskell
 - idris
-- golang
 - java
 - javascript
 - julia
@@ -36,11 +36,13 @@ you want to run is installed and is in PATH.
 - nim
 - ocaml
 - perl
+- perl6
 - php
 - python
 - ruby
 - rust
 - scala
+- swift
 
 ## Input (stdin)
 The input is required to be a json object containing the properties `language`
@@ -51,6 +53,10 @@ forward slashes to create the file in a subdirectory relative to the base
 directory. All files are written into the same base directory under the OS's
 temp dir.
 
+In addition, one may optionally provide the `stdin` and `command` properties to
+provide stdin data to the running code and to run the code with a custom command.
+See examples below.
+
 ## Output (stdout)
 The output is a json object containing the properties `stdout`, `stderr` and
 `error`. `stdout` and `stderr` is captured from the output of the ran code.
@@ -60,20 +66,74 @@ given or if the files cannot be written to disk (permissions, disk space, etc).
 No json will be written to stdout in those cases. Otherwise the exit code is 0.
 
 ## Examples
+
+### Simple example
 #### Input
+```javascript
+{
+  "language": "python",
+  "files": [
     {
-      "language": "python",
-      "files": [
-        {
-          "name": "main.py",
-          "content": "print(42)"
-        }
-      ]
+      "name": "main.py",
+      "content": "print(42)"
     }
+  ]
+}
+```
 
 #### Output
+```javascript
+{
+  "stdout": "42\n",
+  "stderr": "",
+  "error": ""
+}
+```
+
+### Read from stdin
+#### Input
+```javascript
+{
+  "language": "python",
+  "stdin": "42",
+  "files": [
     {
-      "stdout": "42\n",
-      "stderr": "",
-      "error": ""
+      "name": "main.py",
+      "content": "print(input('Number from stdin: '))"
     }
+  ]
+}
+```
+
+#### Output
+```javascript
+{
+  "stdout": "Number from stdin: 42\n",
+  "stderr": "",
+  "error": ""
+}
+```
+
+### Custom run command
+#### Input
+```javascript
+{
+  "language": "bash",
+  "command": "bash main.sh 42",
+  "files": [
+    {
+      "name": "main.sh",
+      "content": "echo Number from arg: $1"
+    }
+  ]
+}
+```
+
+#### Output
+```javascript
+{
+  "stdout": "Number from arg: 42\n",
+  "stderr": "",
+  "error": ""
+}
+```
