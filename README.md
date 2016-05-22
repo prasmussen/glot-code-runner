@@ -68,7 +68,7 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 ## Examples
 
 ### Simple example
-#### Input
+##### Input
 ```javascript
 {
   "language": "python",
@@ -81,7 +81,7 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 }
 ```
 
-#### Output
+##### Output
 ```javascript
 {
   "stdout": "42\n",
@@ -91,7 +91,7 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 ```
 
 ### Read from stdin
-#### Input
+##### Input
 ```javascript
 {
   "language": "python",
@@ -105,7 +105,7 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 }
 ```
 
-#### Output
+##### Output
 ```javascript
 {
   "stdout": "Number from stdin: 42\n",
@@ -115,7 +115,7 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 ```
 
 ### Custom run command
-#### Input
+##### Input
 ```javascript
 {
   "language": "bash",
@@ -129,7 +129,7 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 }
 ```
 
-#### Output
+##### Output
 ```javascript
 {
   "stdout": "Number from arg: 42\n",
