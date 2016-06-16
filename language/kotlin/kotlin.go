@@ -5,7 +5,7 @@ import (
     "../../cmd"
 )
 
-func Run(files []string) (string, string, error) {
+func Run(files []string, stdin string) (string, string, error) {
     workDir := filepath.Dir(files[0])
     fname := filepath.Base(files[0])
 
@@ -14,7 +14,7 @@ func Run(files []string) (string, string, error) {
         return stdout, stderr, err
     }
 
-    return cmd.Run(workDir, "kotlin", className(fname))
+    return cmd.RunStdin(workDir, stdin, "kotlin", className(fname))
 }
 
 func className(fname string) string {
