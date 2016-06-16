@@ -21,7 +21,7 @@ import (
 	"./java"
 	"./javascript"
 	"./julia"
-	"./kt"
+	"./kotlin"
 	"./lua"
 	"./nim"
 	"./ocaml"
@@ -58,7 +58,7 @@ var languages = map[string]runFn{
 	"java":         java.Run,
 	"javascript":   javascript.Run,
 	"julia":        julia.Run,
-	"kt": 			kotlin.Run,
+	"kotlin":       kotlin.Run,
 	"lua":          lua.Run,
 	"nim":          nim.Run,
 	"ocaml":        ocaml.Run,
