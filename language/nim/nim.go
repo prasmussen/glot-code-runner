@@ -1,7 +1,7 @@
 package nim
 
 import (
-	"../../cmd"
+	"github.com/prasmussen/glot-code-runner/cmd"
 	"path/filepath"
 )
 

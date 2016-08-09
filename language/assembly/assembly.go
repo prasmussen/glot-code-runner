@@ -1,7 +1,7 @@
 package assembly
 
 import (
-	"../../cmd"
+	"github.com/prasmussen/glot-code-runner/cmd"
 	"path/filepath"
 )
 

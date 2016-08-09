@@ -1,7 +1,7 @@
 package perl6
 
 import (
-	"../../cmd"
+	"github.com/prasmussen/glot-code-runner/cmd"
 	"path/filepath"
 )
 

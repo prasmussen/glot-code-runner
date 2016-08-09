@@ -1,10 +1,10 @@
 package main
 
 import (
-	"./cmd"
-	"./language"
 	"encoding/json"
 	"fmt"
+	"github.com/prasmussen/glot-code-runner/cmd"
+	"github.com/prasmussen/glot-code-runner/language"
 	"io/ioutil"
 	"os"
 	"path/filepath"

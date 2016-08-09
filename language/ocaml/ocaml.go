@@ -1,8 +1,8 @@
 package ocaml
 
 import (
-	"../../cmd"
-	"../../util"
+	"github.com/prasmussen/glot-code-runner/cmd"
+	"github.com/prasmussen/glot-code-runner/util"
 	"path/filepath"
 )
 
