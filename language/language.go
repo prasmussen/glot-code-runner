@@ -8,6 +8,7 @@ import (
 	"github.com/prasmussen/glot-code-runner/language/clojure"
 	"github.com/prasmussen/glot-code-runner/language/coffeescript"
 	"github.com/prasmussen/glot-code-runner/language/cpp"
+	"github.com/prasmussen/glot-code-runner/language/crystal"
 	"github.com/prasmussen/glot-code-runner/language/csharp"
 	"github.com/prasmussen/glot-code-runner/language/d"
 	"github.com/prasmussen/glot-code-runner/language/elixir"
@@ -44,6 +45,7 @@ var languages = map[string]runFn{
 	"c":            c.Run,
 	"clojure":      clojure.Run,
 	"coffeescript": coffeescript.Run,
+	"crystal":      crystal.Run,
 	"csharp":       csharp.Run,
 	"d":            d.Run,
 	"elixir":       elixir.Run,
