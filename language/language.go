@@ -34,6 +34,7 @@ import (
 	"github.com/prasmussen/glot-code-runner/language/rust"
 	"github.com/prasmussen/glot-code-runner/language/scala"
 	"github.com/prasmussen/glot-code-runner/language/swift"
+	"github.com/prasmussen/glot-code-runner/language/typescript"
 )
 
 type runFn func([]string, string) (string, string, error)
@@ -72,6 +73,7 @@ var languages = map[string]runFn{
 	"rust":         rust.Run,
 	"scala":        scala.Run,
 	"swift":        swift.Run,
+	"typescript":   typescript.Run,
 }
 
 func IsSupported(lang string) bool {
