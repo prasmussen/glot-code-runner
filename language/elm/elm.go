@@ -15,17 +15,11 @@ func Run(files []string, stdin string) (string, string, error) {
 	}
 
 	// Compile elm to javascript
-	stdout, stderr, err = cmd.Run(workDir, "elm-make", files[0], "--output", "raw.js")
+	stdout, stderr, err = cmd.Run(workDir, "elm-make", files[0], "--output", "elm.js")
 	if err != nil {
 		return stdout, stderr, err
 	}
 
-	// Convert to console app
-	stdout, stderr, err = cmd.Run(workDir, "bash", "elm-io.sh", "raw.js", "main.js")
-	if err != nil {
-		return stdout, stderr, err
-	}
-
-	// Run javascript with node
-	return cmd.RunStdin(workDir, stdin, "node", "main.js")
+	// Run javascript with node via app.js from bootstrap
+	return cmd.RunStdin(workDir, stdin, "node", "app.js")
 }
