@@ -9,7 +9,7 @@ func Run(files []string, stdin string) (string, string, error) {
 	workDir := filepath.Dir(files[0])
 
 	// Move bootstrap files into work dir
-	stdout, stderr, err := cmd.RunBash(workDir, "mv -f /bootstrap/* .")
+	stdout, stderr, err := cmd.RunBash(workDir, "cp -rf /bootstrap/* .")
 	if err != nil {
 		return stdout, stderr, err
 	}
