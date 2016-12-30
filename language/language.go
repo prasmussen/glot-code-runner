@@ -24,6 +24,7 @@ import (
 	"github.com/prasmussen/glot-code-runner/language/julia"
 	"github.com/prasmussen/glot-code-runner/language/kotlin"
 	"github.com/prasmussen/glot-code-runner/language/lua"
+	"github.com/prasmussen/glot-code-runner/language/mercury"
 	"github.com/prasmussen/glot-code-runner/language/nim"
 	"github.com/prasmussen/glot-code-runner/language/ocaml"
 	"github.com/prasmussen/glot-code-runner/language/perl"
@@ -63,6 +64,7 @@ var languages = map[string]runFn{
 	"julia":        julia.Run,
 	"kotlin":       kotlin.Run,
 	"lua":          lua.Run,
+	"mercury":      mercury.Run,
 	"nim":          nim.Run,
 	"ocaml":        ocaml.Run,
 	"perl":         perl.Run,
