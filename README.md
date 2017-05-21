@@ -17,6 +17,7 @@ you want to run is installed and is in PATH.
 - bash
 - c
 - clojure
+- cobol
 - coffeescript
 - cpp
 - csharp
