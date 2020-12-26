@@ -1,6 +1,8 @@
 glot-code-runner
 ================
 
+## THIS REPO IS DEPRECATED AND HAS BEEN REPLACED BY [code-runner](https://github.com/glotcode/code-runner)
+
 
 ## Overview
 glot-code-runner is a command line application that reads code as a
